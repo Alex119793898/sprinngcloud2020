@@ -57,5 +57,11 @@
             <scope>test</scope>
         </dependency>
 
+        <!--引入自己定义的api通用包，包含Payment工程的entities层-->
+        <dependency>
+            <groupId>com.atcaoliang.springcloud</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>
