@@ -3,12 +3,11 @@ package com.caoliang.springcloud.controller;
 import com.caoliang.springcloud.entities.CommonResult;
 import com.caoliang.springcloud.entities.Payment;
 import com.caoliang.springcloud.service.PaymentService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
-@Controller
+@RestController
 @RequestMapping("/payment")
 public class PaymentController {
 
