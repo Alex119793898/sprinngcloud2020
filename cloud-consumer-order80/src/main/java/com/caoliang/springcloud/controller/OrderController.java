@@ -18,16 +18,19 @@ public class OrderController {
     @Resource
     private RestTemplate restTemplate;
 
-    public static final String URL = "http://localhost:8001";
+    //public static final String URL = "http://localhost:8001";
+
+    //指定服务提供者的服务名称cloud-payment-service
+    public static final String PAYMENT_URL = "http://cloud-payment-service";
 
     @GetMapping("/consumer/create")
     public CommonResult<Payment> create(Payment payment){
         Log.info("sjfklsj");
-        return restTemplate.postForObject(URL + "/payment/create",payment,CommonResult.class);
+        return restTemplate.postForObject(PAYMENT_URL + "/payment/create",payment,CommonResult.class);
     }
 
-    @GetMapping("/comsumer/getById/{id}")
+    @GetMapping("/consumer/getById/{id}")
     public CommonResult<Payment> getPayment(@PathVariable("id") Long id){
-        return restTemplate.getForObject(URL + "/payment/getById/" + id, CommonResult.class);
+        return restTemplate.getForObject(PAYMENT_URL + "/payment/getById/" + id, CommonResult.class);
     }
 }
