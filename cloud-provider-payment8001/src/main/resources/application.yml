@@ -29,9 +29,9 @@ eureka:
     # 指定ip地址
     ip-address: 127.0.0.1
     # 心跳续约间隔
-    lease-renewal-interval-in-seconds: 1
+    # lease-renewal-interval-in-seconds: 1
     # 服务失效时间,默认90秒
-    lease-expiration-duration-in-seconds: 2
+    # lease-expiration-duration-in-seconds: 2
 mybatis:
   mapper-locations:  classpath:mapper/*.xml
   type-aliases-package: com.caoliang.springcloud.entities
