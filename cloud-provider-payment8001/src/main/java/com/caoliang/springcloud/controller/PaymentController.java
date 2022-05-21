@@ -21,7 +21,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @Value("${server.port}")
-    private Long serverPort;
+    private String serverPort;
 
     @Resource
     private DiscoveryClient discoveryClient;
@@ -43,7 +43,7 @@ public class PaymentController {
 
         System.out.println(payment);
         if(payment!=null){
-            return new CommonResult(200,"查询成功"+serverPort,payment);
+            return new CommonResult(200,"查询成功"+"serverPort：" + serverPort,payment);
         }else {
             return new CommonResult(400,"没有记录："+id,null);
         }
@@ -62,5 +62,10 @@ public class PaymentController {
         }
 
         return discoveryClient;
+    }
+
+    @GetMapping("/lb")
+    public String getPayment(){
+        return serverPort;
     }
 }
