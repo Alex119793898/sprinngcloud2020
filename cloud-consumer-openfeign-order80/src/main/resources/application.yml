@@ -1,0 +1,25 @@
+server:
+  port: 90
+
+spring:
+  application:
+    name: cloud-consumer-openfeign-order-service
+
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
+
+#设置feign客户端超时时间(OpenFeign默认支持ribbon)
+ribbon:
+  #指的是建立连接所用的时间，适用于网络状况正常的情况下,两端连接所用的时间
+  ReadTimeout: 6000
+  #指的是建立连接后从服务器读取到可用资源所用的时间
+  ConnectTimeout: 6000
+
+logging:
+  level:
+    # 以什么级别监控哪个接口
+    com.caoliang.springcloud.service.PaymentFeignService: debug
