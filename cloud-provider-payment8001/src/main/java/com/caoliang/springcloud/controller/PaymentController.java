@@ -38,9 +38,8 @@ public class PaymentController {
     }
 
     @GetMapping(value="/getById/{id}")
-    public CommonResult create(@PathVariable Long id){
+    public CommonResult<Payment> getById(@PathVariable("id") Long id){
         Payment payment =  paymentService.getPaymentById(id);
-
         System.out.println(payment);
         if(payment!=null){
             return new CommonResult(200,"查询成功"+"serverPort：" + serverPort,payment);
@@ -66,6 +65,16 @@ public class PaymentController {
 
     @GetMapping("/lb")
     public String getPayment(){
+        return serverPort;
+    }
+
+    @GetMapping("/feign/timeout")
+    public String payMentFeignTimeout(){
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return serverPort;
     }
 }
