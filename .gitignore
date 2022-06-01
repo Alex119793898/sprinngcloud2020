@@ -1,3 +1,5 @@
 /cloud-consumer-order80/target/
 /cloud-provider-payment8001/target/
 /cloud-eureka-server7001/target/
+/cloud-provider-hystrix-payment8001/target/
+/cloud-consumer-feign-hystrix-order80/target/
