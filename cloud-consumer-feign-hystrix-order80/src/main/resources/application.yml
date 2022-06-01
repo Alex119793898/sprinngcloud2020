@@ -1,0 +1,11 @@
+server:
+  port: 90
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka/
+    register-with-eureka: false
+
+feign:
+  hystrix:
+    enabled: true #在Feign中开启Hystrix
