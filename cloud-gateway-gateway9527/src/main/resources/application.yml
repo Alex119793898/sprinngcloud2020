@@ -21,6 +21,8 @@ spring:
             #- Header=X-Request-Id, \d+       #断言，必须携带X-Request-Id请求头，值必须为数字
             #- Host=*.caoliang.com,*.cl.org
             - Query=username, \d+             # 要有参数名username并且值还要是整数才能通过路由
+          filter:
+            - AddRequestParameter=X-Request-Id,1024     #过滤器工厂会在匹配的请求头加上一对请求头，名称为X-Request-Id值为1024
 
         - id: payment_routth2                #payment_route : 路由的ID，没有固定规则，要求唯一，建议配合服务名
           #uri: http://localhost:8001         #匹配后提供服务的地址
