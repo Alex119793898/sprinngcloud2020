@@ -62,7 +62,11 @@ public class OrderController {
         }
     }
 
-    @GetMapping("/consumer/payment/lb")
+    /*
+    * 之前的 restTemplate @LoadBalance注解已打开(使用的是ribbon负载均衡)
+    * 自己写的 ribbon 的 loadBalancer负载均衡功能暂时注调
+    * */
+    /*@GetMapping("/consumer/payment/lb")
     public String getPaymentLB(){
         List<ServiceInstance> instances = discoveryClient.getInstances("cloud-payment-service");
 
@@ -75,5 +79,5 @@ public class OrderController {
         URI uri = serviceInstance.getUri();
 
         return restTemplate.getForObject(uri + "/payment/lb",String.class);
-    }
+    }*/
 }
