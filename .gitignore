@@ -6,3 +6,6 @@
 /cloud-consumer-feign-hystrix-order80/target/
 /cloud-gateway-gateway9527/target/
 /cloud-consumer-hystrix-dashboard9001/target/
+/spring-config-center-3344/target/
+/spring-config-client-3355/target/
+/spring-config-client-3366/target/
