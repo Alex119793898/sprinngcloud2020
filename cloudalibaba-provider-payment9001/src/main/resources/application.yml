@@ -1,0 +1,16 @@
+server:
+  port: ${port:9001}
+
+spring:
+  application:
+    name: nacos-payment-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848   #注册到开启的 nacos
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'                  #把需要监控的暴露出去
