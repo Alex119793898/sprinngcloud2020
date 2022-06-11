@@ -21,6 +21,9 @@
       <module>spring-config-center-3344</module>
     <module>spring-config-client-3355</module>
     <module>spring-config-client-3366</module>
+    <module>cloudalibaba-provider-payment9001</module>
+    <module>cloudalibaba-consumer-order83</module>
+    <module>cloudalibaba-config-nacos-client3377</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -60,6 +63,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+
       <!--spring cloud alibaba 2.1.0.RELEASE-->
       <dependency>
         <groupId>com.alibaba.cloud</groupId>
